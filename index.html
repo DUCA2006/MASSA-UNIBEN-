@@ -85,6 +85,10 @@
     </div>
   </section>
   
+  <div id="posts-container">
+  <p>Loading MASSA updates...</p>
+</div>
+
   
   <!-- Featured Event & Recap Section for Index -->
 <section style="padding: 20px 15px; max-width: 1200px; margin: 0 auto;">
@@ -687,6 +691,47 @@
     setInterval(() => {
       showSlide(slideIndex + 1);
     }, 3000);
+    
+  
+     async function loadMassaPosts() {
+  const container = document.getElementById("posts-container");
+
+  try {
+    const res = await fetch("https://massa-post-pulse.base44.app/functions/postsApi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "listPublished" })
+    });
+
+    const data = await res.json();
+    const posts = data.posts || [];
+
+    if (posts.length === 0) {
+      container.innerHTML = "<p>No posts published yet.</p>";
+      return;
+    }
+
+    container.innerHTML = posts.map(post => `
+      <article class="post-card" style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+        ${post.cover_image ? `<img src="${post.cover_image}" alt="${post.title}" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">` : ''}
+        <h2 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 8px;">${post.title}</h2>
+        ${post.summary ? `<p style="color: #64748b; font-size: 0.95rem; margin-bottom: 10px; font-weight: 500;">${post.summary}</p>` : ''}
+        <div style="color: #334155; line-height: 1.5;">${post.body}</div>
+        <small style="display: block; margin-top: 12px; color: #94a3b8; font-size: 0.8rem;">
+          Posted on ${new Date(post.created_at).toLocaleDateString()}
+        </small>
+      </article>
+    `).join('');
+
+  } catch (err) {
+    console.error("Error fetching posts:", err);
+    container.innerHTML = "<p>Unable to load posts right now. Please refresh.</p>";
+  }
+}
+
+// Automatically fetch posts when page loads
+document.addEventListener("DOMContentLoaded", loadMassaPosts);
+
   </script>
 
 </body>
