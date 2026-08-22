@@ -22,8 +22,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   position: relative;
-  background: linear-gradient(180deg, #FFFCF3 0%, #FAF5E8 60%, #E2F0D9 100%);
-  color: #1A1A1A;
+  background-color: #f6f5fa !important;
+  color: #0f172a;
 }
 
 /* Force all top-level wrappers to stay contained */
@@ -47,9 +47,9 @@ img, svg, video, canvas {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  background-color: #FAF8F5;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 16px 20px;
+  background-color: #f6f5fa;
+  border-bottom: none;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -69,7 +69,7 @@ img, svg, video, canvas {
 }
 
 .nav-logo {
-  height: 36px;
+  height: 38px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -118,7 +118,7 @@ img, svg, video, canvas {
   right: -100%;
   width: 250px;
   height: 100vh;
-  background-color: #FAF8F5;
+  background-color: #ffffff;
   box-shadow: -4px 0 15px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
@@ -170,12 +170,12 @@ img, svg, video, canvas {
    ========================================================================== */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px 60px 20px;
-  background: linear-gradient(180deg, #FAF8F5 0%, #F2EFE9 100%);
+  padding: 20px 20px 40px 20px;
+  background-color: #f6f5fa !important;
   text-align: center;
   overflow: hidden;
 }
@@ -190,7 +190,7 @@ img, svg, video, canvas {
   background-image: url('faculty-building.jpg');
   background-position: center;
   background-size: cover;
-  opacity: 0.08;
+  opacity: 0.05;
   z-index: 1;
 }
 
@@ -265,6 +265,7 @@ img, svg, video, canvas {
    ========================================================================== */
 .dean-section {
   padding: 30px 24px;
+  background-color: #f6f5fa;
 }
 
 .leadership-grid {
@@ -336,6 +337,7 @@ img, svg, video, canvas {
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #f6f5fa;
 }
 
 .hod-grid {
@@ -437,6 +439,7 @@ img, svg, video, canvas {
   gap: 16px;
   padding: 20px;
   width: 100%;
+  background-color: #f6f5fa;
 }
 
 .post-card {
@@ -466,7 +469,7 @@ img, svg, video, canvas {
    ========================================================================== */
 .timetable-section {
   padding: 30px 20px;
-  background-color: #FAF5E8;
+  background-color: #f6f5fa;
 }
 
 .timetable-tabs {
@@ -603,7 +606,7 @@ img, svg, video, canvas {
 .pq-section,
 .executives-section {
   padding: 30px 20px;
-  background-color: #FFFFFF;
+  background-color: #f6f5fa;
 }
 
 .section-header {
@@ -663,7 +666,7 @@ img, svg, video, canvas {
 .materials-section,
 .gpa-section {
   padding: 30px 20px;
-  background-color: #FAF5E8;
+  background-color: #f6f5fa;
 }
 
 .upload-card,
@@ -953,7 +956,7 @@ img, svg, video, canvas {
    ========================================================================== */
 .whatsapp-community-section {
   padding: 20px;
-  background-color: #FAF5E8;
+  background-color: #f6f5fa;
 }
 
 .whatsapp-card {
@@ -986,8 +989,8 @@ img, svg, video, canvas {
 .archive-bg-watermark {
   position: relative;
   background-image: linear-gradient(
-      rgba(250, 245, 232, 0.92), 
-      rgba(250, 245, 232, 0.92)
+      rgba(246, 245, 250, 0.92), 
+      rgba(246, 245, 250, 0.92)
     ), 
     url('massa-logo.png');
   background-repeat: no-repeat;
@@ -1001,102 +1004,7 @@ img, svg, video, canvas {
    ========================================================================== */
 .site-footer {
   width: 100% !important;
-  background-color: #385240 !important;
-  color: #FFFFFF;
-  padding: 40px 24px 24px 24px;
-  box-sizing: border-box;
-}
-
-.footer-logo-img {
-  max-width: 180px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.footer-title {
-  font-weight: 800;
-  font-size: 20px;
-  color: #FFD700;
-}
-
-.footer-desc {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #D1E0D5;
-  margin-bottom: 20px;
-  max-width: 100%;
-}
-
-.social-icons {
-  display: flex;
-  gap: 18px;
-  margin-bottom: 32px;
-}
-
-.social-icons a {
-  color: #FFD700;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.footer-block {
-  margin-bottom: 28px;
-}
-
-.footer-block h4 {
-  font-size: 11px;
-  letter-spacing: 1.2px;
-  color: #81B38C;
-  margin-bottom: 14px;
-}
-
-.footer-block ul {
-  list-style: none;
-}
-
-.footer-block ul li {
-  margin-bottom: 12px;
-}
-
-.footer-block ul li a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 20px;
-  margin-top: 20px;
-  font-size: 12px;
-  color: #81B38C;
-}
-
-/* ==========================================================================
-   12. MEDIA QUERIES (DESKTOP RESPONSIVENESS)
-   ========================================================================== */
-@media (min-width: 768px) {
-  .leadership-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-/* ==========================================
-   LIGHTER GREEN FOOTER & ICON FIX
-   ========================================== */
-.site-footer {
-  width: 100% !important;
-  background: #1B4D2E !important; /* Rich, lighter green */
+  background: #1B4D2E !important;
   color: #FFFFFF !important;
   padding: 40px 24px 30px 24px;
   box-sizing: border-box;
@@ -1162,7 +1070,7 @@ img, svg, video, canvas {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1.5px;
-  color: #A3D9B1; /* High contrast heading label */
+  color: #A3D9B1;
   margin-bottom: 16px;
   text-transform: uppercase;
 }
@@ -1199,7 +1107,7 @@ img, svg, video, canvas {
 .secretariat-email {
   font-size: 15px;
   font-weight: 700;
-  color: #FFD700; /* Distinct email link color */
+  color: #FFD700;
   text-decoration: none;
   display: inline-block;
 }
@@ -1247,6 +1155,7 @@ img, svg, video, canvas {
   padding: 30px 16px 60px 16px;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #f6f5fa;
 }
 
 .history-hero {
@@ -1411,4 +1320,192 @@ img, svg, video, canvas {
   background-color: #ffffff;
   width: 20px;
   border-radius: 10px;
+}
+
+/* ===================================================
+   MODERN UI CARD SYSTEM (Academic Archive Look)
+   =================================================== */
+
+/* Container Card styling */
+.level-card, .modern-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Touch & Hover Feedback */
+.level-card:active, .modern-card:active {
+  transform: scale(0.98);
+  background-color: #f8fafc;
+}
+
+.level-card:hover, .modern-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Icon Container Pill (Light Tinted Box) */
+.level-icon-box, .icon-badge {
+  width: 52px;
+  height: 52px;
+  background-color: #e8f5e9;
+  color: #15803d;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+/* Text Content Wrapper */
+.level-info, .card-info {
+  flex: 1;
+}
+
+/* Heading Title */
+.level-title, .card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+/* Subtitle Description */
+.level-subtitle, .card-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Action Chevron Arrow on Right */
+.chevron-icon {
+  color: #0f172a;
+  font-size: 16px;
+  margin-left: 12px;
+  font-weight: 700;
+}
+
+/* ===================================================
+   MATCHING INDEX.HTML TO ACADEMIC ARCHIVE THEME
+   =================================================== */
+
+/* Header Container */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: transparent;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logos img {
+  height: 38px;
+  width: auto;
+}
+
+/* Pill Home Button (Top Right) */
+.home-pill-btn {
+  background-color: #0d2318;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Feed Container */
+.main-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 16px 30px 16px;
+}
+
+/* Page / Section Title Styling */
+.section-heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #000000;
+  text-align: center;
+  margin: 20px 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.section-subtext {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+/* Clean White Floating Cards (Trending/News Feed) */
+.content-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.content-card img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.content-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 0 0 6px 0;
+}
+
+.content-card .card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.content-card .card-meta {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   12. MEDIA QUERIES (DESKTOP RESPONSIVENESS)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
