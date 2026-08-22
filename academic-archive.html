@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Archive - MASSA UNIBEN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f7f5fb;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Top Navigation Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: transparent;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0B2414;
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Content Area */
+    .archive-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px 20px 50px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .archive-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .archive-subtitle {
+      font-size: 15px;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    /* Level Selection Grid */
+    .levels-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .level-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 20px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #0B2414;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      border: 1px solid rgba(11, 36, 20, 0.08);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .level-card:active {
+      transform: scale(0.98);
+      background: #f0f4f1;
+    }
+
+    .level-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .level-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(11, 36, 20, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0B2414;
+      font-size: 18px;
+    }
+
+    .level-details h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      text-align: left;
+    }
+
+    .level-details p {
+      font-size: 12.5px;
+      color: #777;
+      text-align: left;
+    }
+
+    .arrow-icon {
+      color: #0B2414;
+      font-size: 16px;
+    }
+
+    /* Footer Accent Bar */
+    .footer-bar {
+      height: 48px;
+      background: #0B2414;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="navbar">
+    <div class="logo-group">
+      <img src="uniben-logo.png" alt="UNIBEN Logo" class="nav-logo">
+      <img src="massa-logo.png" alt="MASSA Logo" class="nav-logo">
+    </div>
+
+    <a href="index.html" class="btn-home">
+      <i class="fas fa-home"></i> Home
+    </a>
+  </header>
+
+  <!-- Level Selection Area -->
+  <main class="archive-container">
+    <h1 class="archive-title">Academic Archive</h1>
+    <p class="archive-subtitle">Select your current year to browse available course materials, past questions, and lecture notes.</p>
+
+    <div class="levels-grid">
+      <!-- 100 Level Card -->
+      <a href="100-level.html" class="level-card">
+        <div class="level-info">
+          <div class="level-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="level-details">
+            <h3>100 Level</h3>
+            <p>First Year Course Materials & PDFs</p>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- 200 Level Card -->
+      <a href="200-level.html" class="level-card">
+        <div class="level-info">
+          <div class="level-icon"><i class="fas fa-book-open"></i></div>
+          <div class="level-details">
+            <h3>200 Level</h3>
+            <p>Second Year Course Materials & PDFs</p>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- 300 Level Card -->
+      <a href="300-level.html" class="level-card">
+        <div class="level-info">
+          <div class="level-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="level-details">
+            <h3>300 Level</h3>
+            <p>Third Year Course Materials & PDFs</p>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right arrow-icon"></i>
+      </a>
+
+      <!-- 400 Level Card -->
+      <a href="400-level.html" class="level-card">
+        <div class="level-info">
+          <div class="level-icon"><i class="fas fa-user-graduate"></i></div>
+          <div class="level-details">
+            <h3>400 Level</h3>
+            <p>Final Year Course Materials & PDFs</p>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right arrow-icon"></i>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer Bar -->
+  <footer class="footer-bar"></footer>
+
+</body>
+</html>

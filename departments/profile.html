@@ -1,0 +1,253 @@
+<!-- FILE LOCATION: departments/profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Department Profile - MASSA UNIBEN</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .profile-container { padding: 15px; max-width: 800px; margin: 0 auto; }
+    
+    /* Upgraded Hero Section */
+    .dept-hero {
+      background: linear-gradient(135deg, #06170d 0%, #0b2414 100%);
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(11, 36, 20, 0.25);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    /* Improved Logo Container - Bigger & Cleaner */
+    .dept-logo-wrapper {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 15px auto;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #FFD700, #0B2414);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .dept-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .dept-hero h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #FFD700;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .dept-hero p {
+      font-size: 12px;
+      opacity: 0.9;
+      color: #e0e0e0;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .profile-card {
+      background: #fff; border-radius: 14px; padding: 18px 15px 22px 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #eaeaea; margin-bottom: 25px;
+      height: auto; min-height: fit-content;
+    }
+
+    .profile-card h2 { 
+      font-size: 16px; color: #0B2414; margin-bottom: 15px; 
+      border-bottom: 2px solid #FFD700; display: inline-block; padding-bottom: 4px; 
+    }
+
+    /* Horizontal Slider for Leadership Panels */
+    .slider-wrapper { position: relative; width: 100%; }
+    
+    .panel-slider {
+      display: flex; gap: 16px; overflow-x: auto;
+      scroll-snap-type: x mandatory; padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .panel-slider::-webkit-scrollbar { display: none; }
+    
+    .panel-card {
+      flex: 0 0 100%; width: 100%; scroll-snap-align: center;
+      background: #f8f9fa; border-radius: 12px; overflow: hidden;
+      border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      box-sizing: border-box;
+    }
+
+    .panel-img {
+      width: 100%; height: 160px; object-fit: cover; display: block;
+      border-bottom: 2px solid #FFD700;
+    }
+
+    .panel-details { padding: 12px 10px; text-align: center; }
+    .panel-tag {
+      display: inline-block; background: #0B2414; color: #FFD700;
+      font-size: 10px; font-weight: 700; padding: 4px 10px;
+      border-radius: 4px; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .panel-details h3 { font-size: 14px; color: #111; margin-bottom: 3px; font-weight: 700; }
+    .panel-details p { font-size: 11px; color: #666; margin: 0; }
+
+    /* Indicator Dots */
+    .slider-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+    .dot { width: 8px; height: 8px; background: #ccc; border-radius: 50%; transition: 0.3s; }
+    .dot.active { background: #0B2414; width: 20px; border-radius: 10px; }
+
+    /* FYB Gallery Stacked by Year */
+    .fyb-year-section { margin-bottom: 22px; }
+    .year-badge {
+      display: inline-block; background: #0B2414; color: #FFD700;
+      font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
+    }
+
+    .gallery-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .gallery-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; border: 2px solid #FFD700; }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="../explore.html" class="btn-secondary" style="padding: 6px 12px; font-size: 13px;">
+      <i class="fas fa-arrow-left"></i> Back to Explore
+    </a>
+  </header>
+
+  <main class="profile-container">
+
+    <!-- Hero banner with Department Logo at top -->
+    <div class="dept-hero">
+      <div class="dept-logo-wrapper">
+        <img id="deptLogo" src="" class="dept-logo-img" alt="Department Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\' viewBox=\'0 0 70 70\'><circle cx=\'35\' cy=\'35\' r=\'35\' fill=\'%230B2414\'/><text x=\'50%\' y=\'55%\' fill=\'%23FFD700\' font-size=\'28\' font-weight=\'bold\' text-anchor=\'middle\'>M</text></svg>'">
+      </div>
+      <h1 id="deptTitle">Department Name</h1>
+      <p>Faculty of Management Sciences • University of Benin</p>
+    </div>
+
+    <!-- Departmental Leadership Horizontal Slide -->
+    <div class="profile-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h2>Departmental Leadership</h2>
+        <span style="font-size: 11px; color: #777;"><i class="fas fa-arrows-left-right"></i> Swipe</span>
+      </div>
+
+      <div class="slider-wrapper">
+        <div class="panel-slider" id="leadershipSlider">
+          
+          <!-- Executive Council Group Card -->
+          <div class="panel-card">
+            <img src="../exec-group.jpg" class="panel-img" alt="Executive Council Group Photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'160\' viewBox=\'0 0 320 160\'><rect width=\'320\' height=\'160\' fill=\'%230B2414\'/><text x=\'50%\' y=\'45%\' fill=\'%23FFD700\' font-size=\'16\' font-weight=\'bold\' text-anchor=\'middle\'>Executive Council Panel</text><text x=\'50%\' y=\'62%\' fill=\'%23ffffff\' font-size=\'12\' text-anchor=\'middle\'>Group Picture</text></svg>'">
+            <div class="panel-details">
+              <span class="panel-tag"><i class="fas fa-users-gear"></i> Executive Council</span>
+              <h3 id="deptExecutive">Led by Comr. [Name]</h3>
+              <p>Departmental Executive Officers</p>
+            </div>
+          </div>
+
+          <!-- Parliamentary Council Group Card -->
+          <div class="panel-card">
+            <img src="../parliament-group.jpg" class="panel-img" alt="Parliamentary Council Group Photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'160\' viewBox=\'0 0 320 160\'><rect width=\'320\' height=\'160\' fill=\'%230B2414\'/><text x=\'50%\' y=\'45%\' fill=\'%23FFD700\' font-size=\'16\' font-weight=\'bold\' text-anchor=\'middle\'>Parliamentary Arm Panel</text><text x=\'50%\' y=\'62%\' fill=\'%23ffffff\' font-size=\'12\' text-anchor=\'middle\'>Group Picture</text></svg>'">
+            <div class="panel-details">
+              <span class="panel-tag"><i class="fas fa-building-columns"></i> Parliament</span>
+              <h3 id="deptParliament">Led by Rt. Hon. [Name]</h3>
+              <p>Honourable Members of Parliament</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Year Class Gallery (FYB) starting from 2024 -->
+    <div class="profile-card">
+      <h2>Final Year Class Gallery (FYB)</h2>
+
+      <!-- 2024 Set -->
+      <div class="fyb-year-section">
+        <span class="year-badge">Class of 2024</span>
+        <div class="gallery-grid">
+          <img src="../fyb-2024-1.jpg" class="gallery-img" alt="FYB 2024 Photo 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'><rect width=\'300\' height=\'200\' fill=\'%230B2414\'/><text x=\'50%\' y=\'45%\' fill=\'%23FFD700\' font-size=\'18\' font-weight=\'bold\' text-anchor=\'middle\'>FYB 2024 Set</text><text x=\'50%\' y=\'60%\' fill=\'%23ffffff\' font-size=\'13\' text-anchor=\'middle\'>Class Photo</text></svg>'">
+        </div>
+      </div>
+
+      <!-- 2025 Set -->
+      <div class="fyb-year-section">
+        <span class="year-badge">Class of 2025</span>
+        <div class="gallery-grid">
+          <img src="../fyb-2025-1.jpg" class="gallery-img" alt="FYB 2025 Photo 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'><rect width=\'300\' height=\'200\' fill=\'%230B2414\'/><text x=\'50%\' y=\'45%\' fill=\'%23FFD700\' font-size=\'18\' font-weight=\'bold\' text-anchor=\'middle\'>FYB 2025 Set</text><text x=\'50%\' y=\'60%\' fill=\'%23ffffff\' font-size=\'13\' text-anchor=\'middle\'>Class Photo</text></svg>'">
+        </div>
+      </div>
+
+      <!-- 2026 Set -->
+      <div class="fyb-year-section">
+        <span class="year-badge">Class of 2026</span>
+        <div class="gallery-grid">
+          <img src="../fyb-2026-1.jpg" class="gallery-img" alt="FYB 2026 Photo 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'><rect width=\'300\' height=\'200\' fill=\'%230B2414\'/><text x=\'50%\' y=\'45%\' fill=\'%23FFD700\' font-size=\'18\' font-weight=\'bold\' text-anchor=\'middle\'>FYB 2026 Set</text><text x=\'50%\' y=\'60%\' fill=\'%23ffffff\' font-size=\'13\' text-anchor=\'middle\'>Class Photo</text></svg>'">
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const deptKey = params.get('dept') || 'default';
+
+    const deptData = {
+      accounting: { name: "Department of Accounting", logo: "./accounting.jpeg" },
+      finance: { name: "Department of Finance", logo: "./finance.jpeg" },
+      busadmin: { name: "Department of Business Administration", logo: "./busadmin.jpeg" },
+      marketing: { name: "Department of Marketing", logo: "./marketing.jpeg" },
+      entrepreneurship: { name: "Department of Entrepreneurship", logo: "./entrepreneurship.jpeg" },
+      hrm: { name: "Human Resources Management", logo: "./hrm.jpeg" },
+      insurance: { name: "Department of Insurance", logo: "./insurance.jpeg" },
+      taxation: { name: "Department of Taxation", logo: "./taxation.jpeg" },
+      actuarial: { name: "Department of Actuarial Science", logo: "./actuarial.jpeg" }
+    };
+
+    if (deptData[deptKey]) {
+      document.getElementById('deptTitle').innerText = deptData[deptKey].name;
+      document.getElementById('deptLogo').src = deptData[deptKey].logo;
+    } else {
+      document.getElementById('deptTitle').innerText = "Department Profile";
+      document.getElementById('deptLogo').src = "./massa.jpeg";
+    }
+
+    // Active dot indicator calculation on swipe
+    const slider = document.getElementById('leadershipSlider');
+    const dots = document.querySelectorAll('.dot');
+
+    slider.addEventListener('scroll', () => {
+      const scrollPosition = slider.scrollLeft;
+      const cardWidth = slider.offsetWidth;
+      const activeIndex = Math.round(scrollPosition / cardWidth);
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
+    });
+  </script>
+</body>
+</html>

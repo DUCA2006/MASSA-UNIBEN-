@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty Archive - MASSA UNIBEN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f7f5fb;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Minimal Top Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: transparent;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-menu-icon {
+      font-size: 22px;
+      color: #333;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Hero Banner Area */
+    .hero-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: #0f0f0f;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      color: #666666;
+      line-height: 1.5;
+      font-weight: 400;
+      margin-bottom: 36px;
+      max-width: 420px;
+    }
+
+    /* Clean Pill Upload Button */
+    .btn-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #0B2414;
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(11, 36, 20, 0.2);
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .btn-upload:active {
+      transform: scale(0.98);
+    }
+
+    .btn-upload i {
+      font-size: 16px;
+    }
+
+    /* Bottom Minimal Bar */
+    .footer-bar {
+      height: 48px;
+      background: #0B2414;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clean Top Navigation -->
+  <header class="navbar">
+    <div class="logo-group">
+      <img src="uniben-logo.png" alt="UNIBEN Logo" class="nav-logo">
+      <img src="massa-logo.png" alt="MASSA Logo" class="nav-logo">
+    </div>
+
+    <a href="index.html" class="nav-menu-icon" title="Home">
+      <i class="fas fa-bars"></i>
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero-container">
+    <h1 class="hero-title">Contribute to<br>the Archive.</h1>
+    
+    <p class="hero-description">
+      Have a helpful textbook, past question, or lecture note? Upload it to our general repository to help your fellow management science students.
+    </p>
+
+    <!-- DIRECT GOOGLE DRIVE REPOSITORY LINK -->
+    <a href="https://drive.google.com/drive/folders/1iseR1oCQ09-vbp_AlRMeOKb6f1fL_Gin?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-upload">
+      <i class="fas fa-plus"></i>
+      <span>Upload PDF / Materials</span>
+    </a>
+  </main>
+
+  <!-- Footer Accent Bar -->
+  <footer class="footer-bar"></footer>
+
+</body>
+</html>

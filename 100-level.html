@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100 Level - MASSA UNIBEN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f7f5fb;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Top Navigation Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(11, 36, 20, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #f0f4f1;
+      color: #0B2414;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-title h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0B2414;
+    }
+
+    .nav-title p {
+      font-size: 11px;
+      color: #666;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0B2414;
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+      width: 100%;
+    }
+
+    /* Search Bar */
+    .search-box {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 14px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 14px 12px 40px;
+      background: #ffffff;
+      border: 1px solid rgba(11, 36, 20, 0.12);
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    /* Semester Filter Tabs */
+    .semester-tabs {
+      display: flex;
+      background: #e2e8e4;
+      padding: 4px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sem-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .sem-btn.active {
+      background: #ffffff;
+      color: #0B2414;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Contribute Banner */
+    .contribute-box {
+      background: #ffffff;
+      border: 1px solid rgba(11, 36, 20, 0.1);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .contribute-text h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0B2414;
+      margin-bottom: 4px;
+    }
+
+    .contribute-text p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .btn-contribute {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0B2414;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-contribute:active {
+      transform: scale(0.96);
+    }
+
+    /* Materials Container */
+    .materials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Footer Bar */
+    .footer-bar {
+      height: 40px;
+      background: #0B2414;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="academic-archive.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      <div class="nav-title">
+        <h2>100 Level Archive</h2>
+        <p>Course Materials & Past Questions</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-home">
+      <i class="fas fa-home"></i> Home
+    </a>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="container">
+    
+    <!-- Search Bar -->
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search course code or title...">
+    </div>
+
+    <!-- Semester Selector -->
+    <div class="semester-tabs">
+      <button class="sem-btn active" onclick="switchSemester(this, '1st')">1st Semester</button>
+      <button class="sem-btn" onclick="switchSemester(this, '2nd')">2nd Semester</button>
+    </div>
+
+<!-- Contribute Banner -->
+<div class="contribute-box">
+  <div class="contribute-text">
+    <h4>Have materials to share?</h4>
+    <p>Upload past questions or lecture notes to help others.</p>
+  </div>
+  <button type="button" class="btn-contribute" onclick="openUploadModal()">
+    <i class="fas fa-upload"></i> Contribute
+  </button>
+</div>
+
+<!-- Upload Modal Popup -->
+<div id="uploadModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:#ffffff; width:100%; max-width:400px; padding:24px; border-radius:16px; position:relative; box-shadow:0 10px 25px rgba(0,0,0,0.15);">
+    <span onclick="closeUploadModal()" style="position:absolute; right:16px; top:12px; font-size:22px; font-weight:bold; color:#666; cursor:pointer;">&times;</span>
+    
+    <h3 style="margin-bottom:6px; color:#0B2414; font-size:18px;">Upload Material</h3>
+    <p style="font-size:12px; color:#666; margin-bottom:18px;">Select your past question or note to submit.</p>
+    
+    <form id="uploadForm" action="YOUR_ENDPOINT_URL" method="POST" enctype="multipart/form-data">
+      <div style="margin-bottom:12px;">
+        <label style="display:block; font-size:11px; font-weight:700; color:#333; margin-bottom:4px;">COURSE CODE</label>
+        <input type="text" name="course_code" placeholder="e.g. MKT 121" required style="width:100%; padding:10px 12px; border:1px solid #ccc; border-radius:8px; outline:none; font-size:13px;">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label style="display:block; font-size:11px; font-weight:700; color:#333; margin-bottom:4px;">ATTACH FILE (PDF / IMAGE)</label>
+        <input type="file" name="file" accept=".pdf,.doc,.docx,.png,.jpg" required style="width:100%; font-size:12px; border:1px dashed #0B2414; padding:10px; border-radius:8px; background:#f0f4f1;">
+      </div>
+
+      <button type="submit" style="width:100%; background:#0B2414; color:#ffffff; border:none; padding:12px; border-radius:8px; font-weight:700; font-size:13px; cursor:pointer;">
+        Submit Material
+      </button>
+    </form>
+  </div>
+</div>
+
+    <!-- Materials Container -->
+    <div class="materials-list" id="materialsList">
+      <!-- Your items will appear here -->
+    </div>
+
+  </main>
+
+  <!-- Footer Accent Bar -->
+  <footer class="footer-bar"></footer>
+
+  <script>
+    function switchSemester(btn, semester) {
+      document.querySelectorAll('.sem-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

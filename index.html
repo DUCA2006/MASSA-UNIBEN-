@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASSA UNIBEN - Official Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo-group">
+        <img src="uniben-logo.png" alt="UNIBEN Logo" class="nav-logo">
+        <img src="massa-logo.png" alt="MASSA Logo" class="nav-logo">
+      </div>
+      <div class="brand-text">
+        <span class="univ-title">FACULTY OF MANAGEMENT SCIENCES</span>
+        <span class="univ-sub">UNIBEN Chapter</span>
+      </div>
+    </div>
+
+    <!-- Hamburger Toggle Button -->
+    <button class="hamburger-btn" id="menuToggle" aria-label="Toggle Menu">
+      &#9776;
+    </button>
+
+    <!-- Hidden Mobile Menu Overlay -->
+    <nav class="nav-menu" id="navMenu">
+      <button class="close-btn" id="menuClose">&times;</button>
+      <ul class="nav-links">
+        <li><a href="academic-archive.html" class="btn">Access Archive</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#gpa-calculator">GPA Calculator</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="badge">MANAGEMENT SCIENCES STUDENTS ASSOCIATION (MASSA)</div>
+      <h1 class="hero-title">
+        Management Excellence.<br />
+        Built for the<br />
+        <span class="highlight">Future.</span>
+      </h1>
+      <p class="hero-desc">
+        The official digital portal for the Management Sciences Students' Association, University of Benin Chapter
+      </p>
+      <a href="academic-archive.html" class="btn-primary">Browse Departmental Archive</a>
+
+      <!-- HERO SLIDER BOX -->
+      <div class="hero-slider-box">
+        <div class="slider-wrapper">
+          <div class="slide active">
+            <img src="iyayi-hall.jpg" alt="Iyayi Hall">
+            <div class="slide-caption">1. Iyayi Hall</div>
+          </div>
+          <div class="slide">
+            <img src="atewe-hall.jpg" alt="Atewe Hall">
+            <div class="slide-caption">2. Atewe Hall</div>
+          </div>
+        </div>
+
+        <!-- Indicator Dots -->
+        <div class="slider-dots">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  
+  <!-- Featured Event & Recap Section for Index -->
+<section style="padding: 20px 15px; max-width: 1200px; margin: 0 auto;">
+  <div class="section-header" style="margin-bottom: 15px;">
+    <span class="badge-sm" style="background: #e8f5e9; color: #0B2414; font-size: 10px; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase;">MASSA BLOG</span>
+    <h2 style="font-size: 20px; color: #0B2414; margin-top: 5px;">Faculty News & Spotlight</h2>
+  </div>
+  
+  <article class="featured-article-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #eaeaea; margin-bottom: 20px;">
+    <div class="hero-slideshow-container" style="position: relative; width: 100%; height: 240px; overflow: hidden; background: #000;">
+      <img src="colloquium-flyer.png" class="hero-slide active" alt="Management Colloquium Flyer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+      <img src="hall-audience.jpg" class="hero-slide" alt="Festus Iyayi Hall Audience" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0;">
+      <img src="execs-group.jpg" class="hero-slide" alt="Momentous Executives Group" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0;">
+    </div>
+    
+    <div class="featured-content" style="padding: 20px;">
+      <div class="featured-meta" style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+        <span class="badge-sm" style="background: #e8f5e9; color: #0B2414; font-size: 10px; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase;">EVENT RECAP</span>
+        <span class="featured-date" style="font-size: 11px; color: #666; font-weight: bold; text-transform: uppercase;">July 1st, 2026 • Festus Iyayi Hall</span>
+      </div>
+      
+      <h1 class="featured-title" style="font-size: 18px; color: #0B2414; line-height: 1.3; margin-bottom: 10px;">Management Colloquium & Innovation Challenge 2026 Records Massive Success</h1>
+      
+      <div class="featured-article-body" style="font-size: 13.5px; color: #333; line-height: 1.5;">
+        <p>The Management Sciences Students Association (MASSA), under the visionary leadership of <strong>The Momentous Executives</strong>, successfully hosted the highly anticipated <em>Management Colloquium & Innovation Challenge 2026</em> at Festus Iyayi Hall.</p>
+        
+        <span class="more-text" id="indexMoreText" style="display: none;">
+          <p style="margin-top: 10px;">Centering on the theme <strong>"From Campus to Industry: Innovation, Employability & Leadership,"</strong> the flagship conference brought together hundreds of high-aspiring students, academic leads, and notable industry figures.</p>
+          <p style="margin-top: 10px;">Keynote insights were delivered by esteemed leaders including Mr. Olorunyomi Joseph Ogunleye (Head, Edo Job Centre), Barr. Jobina Arinze (Head, Edo Innovates), Dr. Mrs. Osasere Gloria Iyamu (Assistant Dean), Dr. Victor Amadin Idehen (HOD, Entrepreneurship), and Janet Iyangbe Genesis (Founder, Hyper Impact Community).</p>
+          <p style="margin-top: 10px;">The event equipped management students with actionable career strategies, digital tools, and pitch dynamics needed to transition smoothly from university academics into competitive global markets.</p>
+        </span>
+        
+        <button onclick="toggleIndexReadMore()" id="indexReadMoreBtn" style="background: none; border: none; color: #0B2414; font-weight: bold; font-size: 13px; padding: 8px 0 0 0; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+          Read More <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+  </article>
+</section>
+
+<script>
+  let indexSlideIndex = 0;
+  const indexSlides = document.querySelectorAll('.featured-article-card .hero-slide');
+  
+  function autoPlayIndexSlides() {
+    if (indexSlides.length > 0) {
+      indexSlides.forEach((slide) => slide.style.opacity = '0');
+      indexSlideIndex = (indexSlideIndex + 1) % indexSlides.length;
+      indexSlides[indexSlideIndex].style.opacity = '1';
+      indexSlides[indexSlideIndex].style.transition = 'opacity 0.8s ease-in-out';
+    }
+  }
+  if (indexSlides.length > 0) {
+    setInterval(autoPlayIndexSlides, 3500);
+  }
+  
+  function toggleIndexReadMore() {
+    const moreText = document.getElementById("indexMoreText");
+    const btnText = document.getElementById("indexReadMoreBtn");
+    if (moreText.style.display === "inline") {
+      moreText.style.display = "none";
+      btnText.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+    } else {
+      moreText.style.display = "inline";
+      btnText.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+    }
+  }
+</script>
+
+  <!-- Faculty Leadership / Dean Section (Glassmorphism) -->
+<section style="padding: 20px 15px; max-width: 1200px; margin: 0 auto;">
+  <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; padding: 25px 20px; text-align: center; box-shadow: 0 10px 30px rgba(11, 36, 20, 0.08); border: 1px solid rgba(11, 36, 20, 0.12);">
+    
+    <!-- Glass Portrait Container -->
+    <div style="position: relative; width: 100%; max-width: 290px; height: 310px; margin: 0 auto 20px auto; border-radius: 18px; overflow: hidden; border: 2px solid rgba(11, 36, 20, 0.15); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); background: rgba(255, 255, 255, 0.2);">
+      <img src="dean-pic.jpg" alt="Prof. Sunday Osaretin Igbinosa" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      
+      <!-- Subtle Gradient Overlay -->
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 35%; background: linear-gradient(to top, rgba(11, 36, 20, 0.6), transparent);"></div>
+      
+      <!-- Floating Glass Badge over photo -->
+      <span style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px; border: 1px solid rgba(255, 255, 255, 0.4); white-space: nowrap;">
+        DEAN OF FACULTY 
+      </span>
+    </div>
+
+    <span style="background: #e8f5e9; color: #0B2414; font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">FACULTY LEADERSHIP</span>
+    
+    <h2 style="font-size: 20px; color: #0B2414; margin: 12px 0 3px 0; font-weight: 800;">Prof. Sunday Osaretin Igbinosa</h2>
+    <p style="font-size: 12.5px; color: #555; font-weight: 600; margin-bottom: 16px;">Dean, Faculty of Management Sciences</p>
+
+    <blockquote style="font-size: 13px; color: #444; line-height: 1.6; font-style: italic; max-width: 520px; margin: 0 auto; padding: 0 10px; border-left: 3px solid #0B2414; text-align: left;">
+      "Welcome to the official digital portal of the Faculty of Management Sciences. We remain committed to academic integrity, professional excellence, and student development."
+    </blockquote>
+
+  </div>
+</section>
+
+
+<!-- Faculty Leadership / Assistant Dean Section -->
+<section style="padding: 10px 15px 20px 15px; max-width: 1200px; margin: 0 auto;">
+  <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; padding: 25px 20px; text-align: center; box-shadow: 0 10px 30px rgba(11, 36, 20, 0.08); border: 1px solid rgba(11, 36, 20, 0.12);">
+    
+    <!-- Glass Portrait Container -->
+    <div style="position: relative; width: 100%; max-width: 290px; height: 310px; margin: 0 auto 20px auto; border-radius: 18px; overflow: hidden; border: 2px solid rgba(11, 36, 20, 0.15); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); background: rgba(255, 255, 255, 0.2);">
+      <img src="asst-dean-pic.jpg" alt="Dr(Mrs) Osasere Gloria Iyamu" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      
+      <!-- Gradient Overlay -->
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 35%; background: linear-gradient(to top, rgba(11, 36, 20, 0.6), transparent);"></div>
+      
+      <!-- Floating Glass Badge over photo -->
+      <span style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px; border: 1px solid rgba(255, 255, 255, 0.4); white-space: nowrap;">
+        ASSISTANT DEAN
+      </span>
+    </div>
+
+    <span style="background: #e8f5e9; color: #0B2414; font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.8px;">FACULTY LEADERSHIP</span>
+    
+    <h2 style="font-size: 20px; color: #0B2414; margin: 12px 0 3px 0; font-weight: 800;">Dr(Mrs) Osasere Gloria Iyamu</h2>
+    <p style="font-size: 12.5px; color: #555; font-weight: 600; margin-bottom: 16px;">Assistant Dean, Faculty of Management Sciences</p>
+
+    <blockquote style="font-size: 13px; color: #444; line-height: 1.6; font-style: italic; max-width: 520px; margin: 0 auto; padding: 0 10px; border-left: 3px solid #0B2414; text-align: left;">
+      "Dedicated to fostering a supportive environment where every student is equipped with the right tools to achieve their highest academic potential."
+    </blockquote>
+
+  </div>
+</section>
+
+
+  <!-- Heads of Department (HODs) Section -->
+  <section class="hod-section" id="hods">
+    <div class="section-header">
+      <span class="badge-sm">ACADEMIC DEPARTMENTS</span>
+      <h2>Heads of Department & Overview</h2>
+      <p>Meet our departmental leaders and discover what each department offers.</p>
+    </div>
+
+    <div class="hod-grid">
+      <!-- 1. Accounting -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-accounting.jpg" alt="HOD Accounting" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Accounting</p>
+        </div>
+        <p class="dept-quote">"Precision and transparency are the pillars of financial integrity."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Equips students with fundamental skills in financial reporting, auditing, cost accounting, and managerial analysis to power global business decisions.</p>
+        </div>
+      </div>
+
+      <!-- 2. Taxation -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-taxation.jpg" alt="HOD Taxation" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Taxation</p>
+        </div>
+        <p class="dept-quote">"Driving sustainable development through sound fiscal policy and compliance."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Focuses on tax law, revenue administration, fiscal policy, and public finance management to build expert tax practitioners and policy advisers.</p>
+        </div>
+      </div>
+
+      <!-- 3. Finance -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-finance.jpg" alt="HOD Finance" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Finance</p>
+        </div>
+        <p class="dept-quote">"Mastering capital allocation and financial management for total growth."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Trains students in corporate finance, investment analysis, portfolio management, and financial technology to lead in modern money markets.</p>
+        </div>
+      </div>
+
+      <!-- 4. Actuarial Science -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-actuarial.jpg" alt="HOD Actuarial Science" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Actuarial Science</p>
+        </div>
+        <p class="dept-quote">"Quantifying financial risk through mathematical precision and probability."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Combines mathematics, statistics, and financial theory to assess risk in insurance, pensions, and complex investment systems.</p>
+        </div>
+      </div>
+
+      <!-- 5. Insurance -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-insurance.jpg" alt="HOD Insurance" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Insurance</p>
+        </div>
+        <p class="dept-quote">"Securing assets and safeguarding economic confidence."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Prepares professionals skilled in underwriting, claims management, risk transfer mechanisms, and commercial insurance operations.</p>
+        </div>
+      </div>
+
+      <!-- 6. Business Administration -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-busadmin.jpg" alt="HOD Business Administration" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Business Administration</p>
+        </div>
+        <p class="dept-quote">"Building visionary executive leaders and modern organizational strategists."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Develops holistic leadership skills in operational strategy, corporate governance, organizational behavior, and general management.</p>
+        </div>
+      </div>
+
+      <!-- 7. Human Resource Management -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-hrm.jpg" alt="HOD Human Resource Management" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Human Resource Management</p>
+        </div>
+        <p class="dept-quote">"Nurturing human capital to drive organizational excellence."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Focuses on talent acquisition, workplace relations, employee performance management, and modern HR analytics.</p>
+        </div>
+      </div>
+
+      <!-- 8. Marketing -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-marketing.jpg" alt="HOD Marketing" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Marketing</p>
+        </div>
+        <p class="dept-quote">"Connecting customer insights to creative market expansion."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Trains dynamic marketers in consumer behavior, digital marketing, brand management, market research, and strategic sales.</p>
+        </div>
+      </div>
+
+      <!-- 9. Entrepreneurship -->
+      <div class="dept-card">
+        <div class="dept-header">
+          <div class="dept-img-box">
+            <img src="hod-entrepreneurship.jpg" alt="HOD Entrepreneurship" onerror="this.src='https://via.placeholder.com/100/0B2414/FFD700?text=HOD'" />
+          </div>
+          <span class="dept-tag">Head of Department</span>
+          <h4>Dr. / Prof. [HOD Name]</h4>
+          <p class="dept-sub">Department of Entrepreneurship</p>
+        </div>
+        <p class="dept-quote">"Transforming innovative ideas into viable, scalable enterprise solutions."</p>
+        <div class="dept-info">
+          <h5><i class="fas fa-info-circle"></i> About Department</h5>
+          <p>Fosters business incubation, venture creation, innovation strategy, and commercial development for emerging enterprise leaders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GPA Calculator Section -->
+  <section class="gpa-section" id="gpa-calculator">
+    <div class="section-header">
+      <span class="badge-sm">ACADEMIC TOOL</span>
+      <h2>GPA Calculator</h2>
+      <p>Calculate your semester Grade Point Average instantly.</p>
+    </div>
+
+    <div class="gpa-card">
+      <div id="course-list">
+        <!-- Default Course Row -->
+        <div class="course-row">
+          <input type="text" placeholder="Course Code (e.g. MKT211)" class="course-code" />
+          <select class="course-unit">
+            <option value="" disabled selected>Units</option>
+            <option value="1">1 Unit</option>
+            <option value="2">2 Units</option>
+            <option value="3">3 Units</option>
+            <option value="4">4 Units</option>
+            <option value="6">6 Units</option>
+          </select>
+          <select class="course-grade">
+            <option value="" disabled selected>Grade</option>
+            <option value="5">A (70-100%)</option>
+            <option value="4">B (60-69%)</option>
+            <option value="3">C (50-59%)</option>
+            <option value="2">D (45-49%)</option>
+            <option value="1">E (40-44%)</option>
+            <option value="0">F (0-39%)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="gpa-actions">
+        <button type="button" class="btn-secondary" id="add-course-btn">
+          <i class="fas fa-plus"></i> Add Course
+        </button>
+        <button type="button" class="btn-calc" id="calculate-gpa-btn">
+          Calculate GPA
+        </button>
+      </div>
+
+      <div class="gpa-result-box" id="result-box" style="display: none;">
+        <span class="result-label">Your Estimated GPA</span>
+        <h3 id="gpa-display">0.00</h3>
+        <p id="gpa-class">First Class</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Community Banner -->
+<!-- WhatsApp Community Banner -->
+<section class="whatsapp-community-section">
+    <div class="whatsapp-card">
+        <div class="whatsapp-icon-bg">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+
+        <div class="whatsapp-content">
+            <h3>Join our Community</h3>
+            <p>
+                Get the latest Faculty updates,
+                  importanta nnouncements delivered straight to your WhatsApp.
+            </p>
+
+            <a href="https://whatsapp.com/channel/0029Vb7G4Gk8fewua7hVa51V"
+               target="_blank"
+               class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Join Channel
+            </a>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Executive Leadership Section -->
+  <section class="executives-section" id="executives">
+    <div class="section-header">
+      <span class="badge-sm">LEADERSHIP</span>
+      <h2>Executive Council</h2>
+      <p>Meet the student executives serving the association.</p>
+    </div>
+
+    <div class="exec-grid">
+      <!-- Executive Card 1: Faculty Governor -->
+      <div class="exec-card">
+        <div class="exec-img-wrapper">
+          <img src="exec-governor.jpg" alt="Faculty Governor" class="exec-img" onerror="this.src='https://via.placeholder.com/150/0B2414/FFD700?text=Governor'" />
+        </div>
+        <div class="exec-details">
+          <span class="exec-role">Faculty Governor</span>
+          <h4>Comr. Executive Name</h4>
+          <p>Department of Business Administration</p>
+          <div class="exec-contact">
+            <a href="tel:+2340000000000"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/2340000000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Executive Card 2: Secretary General -->
+      <div class="exec-card">
+        <div class="exec-img-wrapper">
+          <img src="exec-sec.jpg" alt="Secretary General" class="exec-img" onerror="this.src='https://via.placeholder.com/150/0B2414/FFD700?text=Sec+Gen'" />
+        </div>
+        <div class="exec-details">
+          <span class="exec-role">Secretary General</span>
+          <h4>Comr. Executive Name</h4>
+          <p>Department of Marketing</p>
+          <div class="exec-contact">
+            <a href="tel:+2340000000000"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/2340000000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- MASSA Brand Header -->
+    <div class="footer-brand">
+      <img src="massa-logo.png" alt="MASSA Logo" class="footer-logo">
+      <h3 class="footer-brand-title">MASSA UNIBEN</h3>
+    </div>
+
+    <!-- Description -->
+    <p class="footer-desc">
+      Shaping the future of global commerce and management through innovation, integrity, and academic excellence at the Faculty of Management Sciences, University of Benin.
+    </p>
+
+    <!-- Social Icons (Inline SVGs) -->
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="#" aria-label="TikTok">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.56-1.28 2.55.02.92.51 1.81 1.27 2.33.82.58 1.91.73 2.87.42.96-.29 1.72-1.07 1.97-2.05.15-.65.12-1.33.12-2.01V.02z"/></svg>
+      </a>
+      <a href="#" aria-label="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      </a>
+    </div>
+
+    <!-- PLATFORM LINKS -->
+    <div class="footer-block">
+      <h4>PLATFORM</h4>
+      <ul>
+        <li><a href="academic-archive.html">Archive</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#gpa-calculator">GPA Calculator</a></li>
+      </ul>
+    </div>
+
+    <!-- CONNECT LINKS -->
+    <div class="footer-block">
+      <h4>CONNECT</h4>
+      <ul>
+        <li><a href="#contact">Contact Us</a></li>
+        <li>
+          <a href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.56-1.28 2.55.02.92.51 1.81 1.27 2.33.82.58 1.91.73 2.87.42.96-.29 1.72-1.07 1.97-2.05.15-.65.12-1.33.12-2.01V.02z"/></svg>
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SECRETARIAT SECTION -->
+    <div class="footer-block">
+      <h4>SECRETARIAT</h4>
+      <p class="secretariat-text">
+        Faculty of Management Sciences,<br>
+        University of Benin,<br>
+        Ugbowo, Benin City.
+      </p>
+      <a href="mailto:massa@uniben.edu" class="secretariat-email">massa@uniben.edu</a>
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- BOTTOM COPYRIGHT & LEGAL -->
+    <div class="footer-bottom">
+      <p class="copyright-text">&copy; 2026 MASSA UNIBEN Chapter. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menuClose = document.getElementById('menuClose');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    // Open menu
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.add('active');
+      });
+    }
+
+    // Close menu with 'X' button
+    if (menuClose) {
+      menuClose.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    }
+
+    // Close menu automatically when any link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Image Slider Controls
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      if (!slides.length) return;
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slideIndex = index;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+
+      slides[slideIndex].classList.add('active');
+      dots[slideIndex].classList.add('active');
+    }
+
+    function currentSlide(index) {
+      showSlide(index);
+    }
+
+    setInterval(() => {
+      showSlide(slideIndex + 1);
+    }, 3000);
+  </script>
+
+</body>
+</html>
