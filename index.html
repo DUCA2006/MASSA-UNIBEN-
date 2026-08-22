@@ -13,6 +13,25 @@
       margin: 0;
       padding: 0;
     }
+
+    /* Skeleton Loading Shimmer Effect */
+    .skeleton-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .skeleton {
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+    @keyframes skeleton-shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
   </style>
 </head>
 <body style="background-color: #f7f5fb;">
@@ -45,28 +64,6 @@
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
-    
-    <style>
-  /* Skeleton Loading Shimmer Effect */
-  .skeleton-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  .skeleton {
-    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
-    background-size: 200% 100%;
-    animation: skeleton-shimmer 1.5s infinite;
-    border-radius: 6px;
-  }
-  @keyframes skeleton-shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-</style>
-
   </header>
 
   <!-- Hero Section -->
@@ -108,20 +105,28 @@
   </section>
   
   <div style="display: flex; align-items: center; justify-content: space-between; margin: 35px 12px 18px 12px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0;">
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <div style="width: 4px; height: 24px; background-color: #15803d; border-radius: 2px;"></div>
-    <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">What's Trending Now</h3>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 4px; height: 24px; background-color: #15803d; border-radius: 2px;"></div>
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">What's Trending Now</h3>
+    </div>
+    <span style="background: #dcfce7; color: #15803d; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; text-transform: uppercase;">Live Feed</span>
   </div>
-  <span style="background: #dcfce7; color: #15803d; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; text-transform: uppercase;">Live Feed</span>
-</div>
 
+  <div id="posts-container" style="padding: 0 12px;">
+    <!-- Skeleton Placeholder Cards shown while Base44 data loads -->
+    <div class="skeleton-card">
+      <div class="skeleton" style="width: 100%; height: 200px; margin-bottom: 12px;"></div>
+      <div class="skeleton" style="width: 70%; height: 22px; margin-bottom: 10px;"></div>
+      <div class="skeleton" style="width: 90%; height: 14px; margin-bottom: 6px;"></div>
+      <div class="skeleton" style="width: 40%; height: 14px;"></div>
+    </div>
+    <div class="skeleton-card">
+      <div class="skeleton" style="width: 100%; height: 200px; margin-bottom: 12px;"></div>
+      <div class="skeleton" style="width: 65%; height: 22px; margin-bottom: 10px;"></div>
+      <div class="skeleton" style="width: 85%; height: 14px;"></div>
+    </div>
+  </div>
 
-  
-  <div id="posts-container">
-  <p>Loading MASSA updates...</p>
-</div>
-
-  
   <!-- Featured Event & Recap Section for Index -->
 <section style="padding: 20px 15px; max-width: 1200px; margin: 0 auto;">
   <div class="section-header" style="margin-bottom: 15px;">
@@ -264,7 +269,6 @@
   </div>
 </section>
 
-
 <!-- Faculty Leadership / Assistant Dean Section -->
 <section style="padding: 10px 15px 20px 15px; max-width: 1200px; margin: 0 auto;">
   <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; padding: 25px 20px; text-align: center; box-shadow: 0 10px 30px rgba(11, 36, 20, 0.08); border: 1px solid rgba(11, 36, 20, 0.12);">
@@ -293,7 +297,6 @@
 
   </div>
 </section>
-
 
   <!-- Heads of Department (HODs) Section -->
   <section class="hod-section" id="hods" style="background-color: transparent;">
@@ -509,8 +512,7 @@
     </div>
   </section>
 
-  <!-- WhatsApp Community Banner -->
-<!-- WhatsApp Community Card -->
+  <!-- WhatsApp Community Card -->
 <div style="max-width: 500px; margin: 24px auto; padding: 0 16px;">
   <div style="background: #0B2414; padding: 32px 20px; border-radius: 24px; text-align: center; color: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
     
@@ -534,7 +536,6 @@
 
   </div>
 </div>
-
 
   <!-- Executive Leadership Section -->
   <section class="executives-section" id="executives" style="background-color: transparent;">
@@ -668,7 +669,6 @@
   </div>
 </footer>
 
-
   <script src="script.js"></script>
 
   <script>
@@ -724,46 +724,44 @@
       showSlide(slideIndex + 1);
     }, 3000);
     
-  
-     async function loadMassaPosts() {
-  const container = document.getElementById("posts-container");
+    async function loadMassaPosts() {
+      const container = document.getElementById("posts-container");
 
-  try {
-    const res = await fetch("https://massa-post-pulse.base44.app/functions/postsApi", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "listPublished" })
-    });
+      try {
+        const res = await fetch("https://massa-post-pulse.base44.app/functions/postsApi", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action: "listPublished" })
+        });
 
-    const data = await res.json();
-    const posts = data.posts || [];
+        const data = await res.json();
+        const posts = data.posts || [];
 
-    if (posts.length === 0) {
-      container.innerHTML = "<p>No posts published yet.</p>";
-      return;
+        if (posts.length === 0) {
+          container.innerHTML = "<p style='text-align:center; color:#64748b;'>No posts published yet.</p>";
+          return;
+        }
+
+        container.innerHTML = posts.map(post => `
+          <article class="post-card" style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+            ${post.cover_image ? `<img src="${post.cover_image}" alt="${post.title}" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">` : ''}
+            <h2 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 8px;">${post.title}</h2>
+            ${post.summary ? `<p style="color: #64748b; font-size: 0.95rem; margin-bottom: 10px; font-weight: 500;">${post.summary}</p>` : ''}
+            <div style="color: #334155; line-height: 1.5;">${post.body}</div>
+            <small style="display: block; margin-top: 12px; color: #94a3b8; font-size: 0.8rem;">
+              Posted on ${new Date(post.created_at).toLocaleDateString()}
+            </small>
+          </article>
+        `).join('');
+
+      } catch (err) {
+        console.error("Error fetching posts:", err);
+        container.innerHTML = "<p style='text-align:center; color:#ef4444;'>Unable to load posts right now. Please refresh.</p>";
+      }
     }
 
-    container.innerHTML = posts.map(post => `
-      <article class="post-card" style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
-        ${post.cover_image ? `<img src="${post.cover_image}" alt="${post.title}" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">` : ''}
-        <h2 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 8px;">${post.title}</h2>
-        ${post.summary ? `<p style="color: #64748b; font-size: 0.95rem; margin-bottom: 10px; font-weight: 500;">${post.summary}</p>` : ''}
-        <div style="color: #334155; line-height: 1.5;">${post.body}</div>
-        <small style="display: block; margin-top: 12px; color: #94a3b8; font-size: 0.8rem;">
-          Posted on ${new Date(post.created_at).toLocaleDateString()}
-        </small>
-      </article>
-    `).join('');
-
-  } catch (err) {
-    console.error("Error fetching posts:", err);
-    container.innerHTML = "<p>Unable to load posts right now. Please refresh.</p>";
-  }
-}
-
-// Automatically fetch posts when page loads
-document.addEventListener("DOMContentLoaded", loadMassaPosts);
-
+    // Automatically fetch posts when page loads
+    document.addEventListener("DOMContentLoaded", loadMassaPosts);
   </script>
 
 </body>
