@@ -156,29 +156,39 @@
   // Dynamic API Fetch Script for Lovable Content Console
   async function fetchFacultyPosts() {
     try {
-      const response = await fetch('https://faculty-fire-starter.lovable.app/api/public/posts');
+      const response = await fetch('https://my-personal-backend.lovable.app/api/public/posts?limit=10');
       const data = await response.json();
       
-      if (data && data.length > 0) {
-        const latestPost = data[0];
+      const posts = data.posts || data;
+      
+      if (posts && posts.length > 0) {
+        const latestPost = posts[0];
         
         if (latestPost.title) {
-          document.querySelector('.featured-title').innerText = latestPost.title;
+          const titleEl = document.querySelector('.featured-title');
+          if (titleEl) titleEl.innerText = latestPost.title;
         }
-        if (latestPost.content || latestPost.body) {
-          document.querySelector('.featured-article-body p').innerHTML = latestPost.content || latestPost.body;
+        
+        const bodyContent = latestPost.summary || latestPost.content || latestPost.body;
+        if (bodyContent) {
+          const bodyEl = document.querySelector('.featured-article-body p');
+          if (bodyEl) bodyEl.innerHTML = bodyContent;
         }
-        if (latestPost.created_at || latestPost.date) {
-          const formattedDate = new Date(latestPost.created_at || latestPost.date).toLocaleDateString('en-US', {
+        
+        if (latestPost.created_at || latestPost.published_at || latestPost.date) {
+          const postDate = new Date(latestPost.created_at || latestPost.published_at || latestPost.date);
+          const formattedDate = postDate.toLocaleDateString('en-US', {
             month: 'long',
             day: 'numeric',
             year: 'numeric'
           });
-          document.querySelector('.featured-date').innerText = `${formattedDate} • MASSA Updates`;
+          const dateEl = document.querySelector('.featured-date');
+          if (dateEl) dateEl.innerText = `${formattedDate} • MASSA Updates`;
         }
-        if (latestPost.image_url) {
+        
+        if (latestPost.image_url || latestPost.cover_image) {
           const mainImg = document.querySelector('.hero-slideshow-container img.hero-slide');
-          if (mainImg) mainImg.src = latestPost.image_url;
+          if (mainImg) mainImg.src = latestPost.image_url || latestPost.cover_image;
         }
       }
     } catch (error) {
