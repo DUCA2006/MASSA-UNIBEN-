@@ -9,7 +9,11 @@
   "background_color": "#f6f5fa",
   "theme_color": "#1B4D2E",
   "orientation": "portrait",
-  "categories": ["education", "news", "productivity"],
+  "categories": [
+    "education",
+    "news",
+    "productivity"
+  ],
   "prefer_related_applications": false,
   "icons": [
     {
