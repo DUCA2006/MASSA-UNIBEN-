@@ -1,15 +1,16 @@
 {
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
   "name": "MASSA UNIBEN",
+  "orientation": "any",
+  "scope": "/",
   "short_name": "MASSA",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#6A1B9A",
-  "icons": [
-    {
-      "src": "assets/massa-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+  "theme_color": "#ffffff",
+  "id": "massa",
+  "description": "MASSA UNIBEN – Faculty updates, news, announcements, events and student information.",
+  "categories": [
+    "education"
   ]
 }
