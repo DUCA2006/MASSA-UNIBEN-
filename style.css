@@ -44,16 +44,21 @@ img, svg, video, canvas {
    2. HEADER & NAVBAR
    ========================================================================== */
 .navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background-color: #f6f5fa;
+  background-color: rgba(246, 245, 250, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: none;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .nav-left {
