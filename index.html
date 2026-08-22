@@ -152,6 +152,41 @@
       btnText.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
     }
   }
+
+  // Dynamic API Fetch Script for Lovable Content Console
+  async function fetchFacultyPosts() {
+    try {
+      const response = await fetch('https://faculty-fire-starter.lovable.app/api/public/posts');
+      const data = await response.json();
+      
+      if (data && data.length > 0) {
+        const latestPost = data[0];
+        
+        if (latestPost.title) {
+          document.querySelector('.featured-title').innerText = latestPost.title;
+        }
+        if (latestPost.content || latestPost.body) {
+          document.querySelector('.featured-article-body p').innerHTML = latestPost.content || latestPost.body;
+        }
+        if (latestPost.created_at || latestPost.date) {
+          const formattedDate = new Date(latestPost.created_at || latestPost.date).toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+          });
+          document.querySelector('.featured-date').innerText = `${formattedDate} • MASSA Updates`;
+        }
+        if (latestPost.image_url) {
+          const mainImg = document.querySelector('.hero-slideshow-container img.hero-slide');
+          if (mainImg) mainImg.src = latestPost.image_url;
+        }
+      }
+    } catch (error) {
+      console.error('Error loading posts from API:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', fetchFacultyPosts);
 </script>
 
   <!-- Faculty Leadership / Dean Section (Glassmorphism) -->
