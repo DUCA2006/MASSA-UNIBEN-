@@ -19,5 +19,13 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "categories": [
+    "education",
+    "news",
+    "productivity"
+  ],
+  "lang": "en",
+  "orientation": "portrait",
+  "dir": "ltr"
 }
