@@ -174,10 +174,9 @@
   </div>
 
 <div id="massa-news"></div>
-
 <script>
   const API = "https://massa-content-manager-copy-f9b6a1db.base44.app/functions/postsApi";
-  
+
   function timeAgo(dateStr) {
     const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
     if (diff < 60) return "just now";
@@ -185,7 +184,7 @@
     if (diff < 86400) return Math.floor(diff / 3600) + " hour" + (Math.floor(diff / 3600) > 1 ? "s" : "") + " ago";
     return Math.floor(diff / 86400) + " day" + (Math.floor(diff / 86400) > 1 ? "s" : "") + " ago";
   }
-  
+
   async function loadPosts() {
     try {
       const res = await fetch(API, { method: "GET" });
@@ -193,26 +192,33 @@
       const container = document.getElementById("massa-news");
       
       if (!data.success || !data.posts?.length) {
-        container.innerHTML = "<p>No posts yet.</p>";
+        container.innerHTML = "<p style='padding: 0 16px; color: #64748b;'>No posts yet.</p>";
         return;
       }
-      
+
       container.innerHTML = data.posts.map(p => `
-        <article style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:20px;max-width:640px;">
-          ${p.cover_image ? `<img src="${p.cover_image}" alt="${p.title}" style="width:100%;height:220px;object-fit:cover;">` : ""}
-          <div style="padding:16px;">
-            <h3 style="margin:0 0 8px;font-size:20px;">${p.title}</h3>
-            ${p.summary ? `<p style="color:#64748b;margin:0 0 12px;">${p.summary}</p>` : ""}
-            <p style="white-space:pre-wrap;margin:0 0 8px;">${p.body}</p>
-            <small style="color:#94a3b8;">${timeAgo(p.created_at)}</small>
+        <article class="featured-article-card" style="background: #ffffff; border-radius: 18px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; margin: 0 16px 20px 16px;">
+          ${p.cover_image ? `
+            <div style="width: 100%; overflow: hidden; background: #f8fafc;">
+              <img src="${p.cover_image}" alt="${p.title}" style="width: 100%; height: auto; display: block; object-fit: contain;">
+            </div>
+          ` : ""}
+          <div class="featured-content" style="padding: 20px;">
+            <div class="featured-meta" style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+              <span class="badge-sm" style="background: #e8f5e9; color: #15803d; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 12px; text-transform: uppercase;">ANNOUNCEMENT</span>
+              <span style="font-size: 11px; color: #64748b; font-weight: 700;">${timeAgo(p.created_at)}</span>
+            </div>
+            <h3 style="font-size: 18px; color: #0f172a; line-height: 1.35; margin-bottom: 8px; font-weight: 800;">${p.title}</h3>
+            ${p.summary ? `<p style="font-size: 13px; color: #64748b; margin-bottom: 10px; font-weight: 600;">${p.summary}</p>` : ""}
+            <div style="font-size: 13.5px; color: #334155; line-height: 1.6; white-space: pre-wrap;">${p.body}</div>
           </div>
         </article>
       `).join("");
     } catch (e) {
-      document.getElementById("massa-news").innerHTML = "<p>Unable to load posts.</p>";
+      document.getElementById("massa-news").innerHTML = "<p style='padding: 0 16px; color: #64748b;'>Unable to load posts.</p>";
     }
   }
-  
+
   loadPosts();
   setInterval(loadPosts, 60000);
 </script>
