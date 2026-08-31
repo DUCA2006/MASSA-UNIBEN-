@@ -173,6 +173,50 @@
     <span style="background: #e8f5e9; color: #15803d; font-size: 0.7rem; font-weight: 800; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">Live Feed</span>
   </div>
 
+<div id="massa-news"></div>
+
+<script>
+  const API = "https://massa-content-manager-copy-f9b6a1db.base44.app/functions/postsApi";
+  
+  function timeAgo(dateStr) {
+    const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+    if (diff < 60) return "just now";
+    if (diff < 3600) return Math.floor(diff / 60) + " min ago";
+    if (diff < 86400) return Math.floor(diff / 3600) + " hour" + (Math.floor(diff / 3600) > 1 ? "s" : "") + " ago";
+    return Math.floor(diff / 86400) + " day" + (Math.floor(diff / 86400) > 1 ? "s" : "") + " ago";
+  }
+  
+  async function loadPosts() {
+    try {
+      const res = await fetch(API, { method: "GET" });
+      const data = await res.json();
+      const container = document.getElementById("massa-news");
+      
+      if (!data.success || !data.posts?.length) {
+        container.innerHTML = "<p>No posts yet.</p>";
+        return;
+      }
+      
+      container.innerHTML = data.posts.map(p => `
+        <article style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:20px;max-width:640px;">
+          ${p.cover_image ? `<img src="${p.cover_image}" alt="${p.title}" style="width:100%;height:220px;object-fit:cover;">` : ""}
+          <div style="padding:16px;">
+            <h3 style="margin:0 0 8px;font-size:20px;">${p.title}</h3>
+            ${p.summary ? `<p style="color:#64748b;margin:0 0 12px;">${p.summary}</p>` : ""}
+            <p style="white-space:pre-wrap;margin:0 0 8px;">${p.body}</p>
+            <small style="color:#94a3b8;">${timeAgo(p.created_at)}</small>
+          </div>
+        </article>
+      `).join("");
+    } catch (e) {
+      document.getElementById("massa-news").innerHTML = "<p>Unable to load posts.</p>";
+    }
+  }
+  
+  loadPosts();
+  setInterval(loadPosts, 60000);
+</script>
+
   <div id="posts-container" style="padding: 0 16px;">
     <!-- Skeleton Placeholder Cards -->
     <div class="skeleton-card">
