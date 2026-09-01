@@ -2972,64 +2972,53 @@ canvas {
 
 }
 
-/* ==========================================================================
 
-   17. SMALL PHONE FIXES
 
-   ========================================================================== */
 
-@media (max-width: 380px) {
+/* Fix header logo overflow & top bar layout */
+header {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
 
-  .navbar {
+header img {
+  max-height: 45px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
 
-    padding-left: 12px;
+header div {
+  max-width: 65% !important;
+  flex-wrap: nowrap !important;
+}
 
-    padding-right: 12px;
+/* Remove top gap, stick header to top, and force full mobile width */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
 
-  }
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
 
-  .univ-title {
+header {
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+  width: 100% !important;
+}
 
-    font-size: 10px;
+.hero {
+  padding-top: 10px !important;
+  width: 100% !important;
+}
 
-  }
-
-  .univ-sub {
-
-    font-size: 9px;
-
-  }
-
-  .nav-logo {
-
-    height: 34px;
-
-  }
-
-  .hamburger-btn {
-
-    width: 42px;
-
-    height: 42px;
-
-  }
-
-  .hero-title {
-
-    font-size: 32px;
-
-  }
-
-  .tt-info-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .form-row {
-
-    flex-direction: column;
-
-  }
-
+.site-footer, footer {
+  width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
